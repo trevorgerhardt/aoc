@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { calculateValue } from "."
 import { getInput } from "../utils"
+import { name as DAY } from "./package.json"
 
 const exampleInput = `
 3   4
@@ -16,7 +17,7 @@ describe("2024-01", () => {
 	})
 
 	test("pt2", async () => {
-		const input = await getInput(1)
+		const input = await getInput(DAY)
 		expect(calculateValue(input)).toBe(1_882_714)
 	})
 })

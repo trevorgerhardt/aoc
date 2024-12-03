@@ -5,6 +5,7 @@
 	"scripts": {
 		"fmt": "bun run --bun biome format . --write",
 		"lint": "bun run --bun biome check --apply ./",
+		"init": "bun run ./scripts/init.ts",
 		"postinstall": "cp hooks/* .git/hooks/"
 	},
 	"dependencies": {

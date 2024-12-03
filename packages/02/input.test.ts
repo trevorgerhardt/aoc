@@ -1,8 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { calculateValue } from "."
 import { getInput } from "../utils"
-
-const DAY = 2
+import { name as DAY } from "./package.json"
 
 const exampleInput = `
 7 6 4 2 1

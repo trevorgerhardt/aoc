@@ -113,7 +113,7 @@ export const nums = (s: string, splitWith = " ") =>
 	s.split(splitWith).map(Number)
 
 const baseUrl = "https://adventofcode.com"
-export async function getInput(day: number, year = 2024) {
+export async function getInput(day: string, year = 2024) {
 	const filename = `${year}-${day}.txt`
 	const filePath = `${import.meta.dir}/../../data/${filename}`
 	const file = Bun.file(filePath)
