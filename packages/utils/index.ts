@@ -16,6 +16,12 @@ export function filterIndex<T>(array: T[], index: number): T[] {
 	return array.filter((_, i) => i !== index)
 }
 
+export class MultiMap<K, V> extends Map<K, V[]> {
+	add(key: K, value: V) {
+		this.set(key, [...(this.get(key) ?? []), value])
+	}
+}
+
 function hasIterator(value: unknown): boolean {
 	return typeof value === "object" && value != null && Symbol.iterator in value
 }
