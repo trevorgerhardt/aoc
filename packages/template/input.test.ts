@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test"
+import { expect, test } from "bun:test"
 import { getInput } from "../utils"
 import { name as DAY } from "./package.json"
 
@@ -6,22 +6,20 @@ const exampleInput = `
 
 `
 
-function parseInput(input: string) {
+function parse(input: string) {
 	return input.trim().split("\n")
 }
 
-function calculateValue(input: string) {
-	const values = parseInput(input)
+function calc(input: string) {
+	const values = parse(input)
 	return values.length
 }
 
-describe(`2024-${DAY}`, () => {
-	test("example", () => {
-		expect(calculateValue(exampleInput)).toBe(0)
-	})
+test(`2024-${DAY}: Example`, () => {
+	expect(calc(exampleInput)).toBe(1)
+})
 
-	test("input", async () => {
-		const input = await getInput(DAY)
-		expect(calculateValue(input)).toBe(0)
-	})
+test(`2024-${DAY}: Result 👆`, async () => {
+	const input = await getInput(DAY)
+	console.log("\nResult 👇\n", calc(input))
 })

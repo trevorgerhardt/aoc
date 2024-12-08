@@ -69,8 +69,8 @@ describe(`2024-${DAY}`, () => {
 		expect(calculateValue(exampleInput)).toBe(34)
 	})
 
-	test("input", async () => {
+	test("👆 Final Result 👆", async () => {
 		const input = await getInput(DAY)
-		expect(calculateValue(input)).toBe(0)
+		console.log("\n👇  Final Result 👇\n", calculateValue(input))
 	})
 })
