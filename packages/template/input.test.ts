@@ -19,7 +19,7 @@ test(`2024-${DAY}: Example`, () => {
 	expect(calc(exampleInput)).toBe(1)
 })
 
-test(`2024-${DAY}: Result 👆`, async () => {
+test.skip(`2024-${DAY}: Copy Result 👆`, async () => {
 	const input = await getInput(DAY)
-	console.log("\nResult 👇\n", calc(input))
+	console.log("\nCopy Result 👇\n", calc(input))
 })
