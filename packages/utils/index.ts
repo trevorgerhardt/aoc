@@ -91,7 +91,9 @@ export function createPrintEstimatedFinishTime() {
 	let prev = Bun.nanoseconds()
 	return function printEstimate(left: number) {
 		const now = Bun.nanoseconds()
-		print(`estimated finish time: ${estimatedFinishTime(left, prev, now)}`)
+		print(
+			`${left} left, est. finish in: ${estimatedFinishTime(left, prev, now)}`,
+		)
 		prev = now
 	}
 }
