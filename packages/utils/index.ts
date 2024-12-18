@@ -18,7 +18,10 @@ export function filterIndex<T>(array: T[], index: number): T[] {
 
 export class MultiMap<K, V> extends Map<K, V[]> {
 	add(key: K, value: V) {
-		this.set(key, [...(this.get(key) ?? []), value])
+		this.set(key, [...this.get(key), value])
+	}
+	get(key: K) {
+		return super.get(key) ?? []
 	}
 }
 
