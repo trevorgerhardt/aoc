@@ -128,8 +128,7 @@ export async function getInput(day: string, year = 2024) {
 	const filename = `${year}-${day}.txt`
 	const filePath = `${import.meta.dir}/../../data/${filename}`
 	const file = Bun.file(filePath)
-	const exists = await file.exists()
-	if (!exists) {
+	if (!(await file.exists())) {
 		console.log(`File ${filename} not found, fetching from ${baseUrl}.`)
 		const Cookie = process.env.COOKIE
 		if (!Cookie) throw new Error("process.env.COOKIE must be set")

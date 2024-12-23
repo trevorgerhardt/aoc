@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import { MultiMap, getInput } from "../utils"
+import { getInput } from "../utils"
 import { name as DAY } from "./package.json"
 
 const exampleInput = ` 
