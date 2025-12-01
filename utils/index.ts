@@ -109,9 +109,10 @@ export const nums = (s: string, splitWith = " ") =>
 	s.split(splitWith).map(Number)
 
 const baseUrl = "https://adventofcode.com"
-export async function getInput(day: number, year = 2024) {
+const CURRENT_YEAR = new Date().getFullYear()
+export async function getInput(day: number, year = CURRENT_YEAR) {
 	const filename = `${year}-${day}.txt`
-	const filePath = `${import.meta.dir}/../../data/${filename}`
+	const filePath = `${import.meta.dir}/../data/${filename}`
 	const file = Bun.file(filePath)
 	const exists = await file.exists()
 	if (!exists) {
