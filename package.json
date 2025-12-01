@@ -2,16 +2,20 @@
 	"name": "aoc",
 	"private": true,
 	"scripts": {
-		"fmt": "bun run --bun biome format . --write",
-		"lint": "bun run --bun biome check --apply ./",
+		"fmt": "biome format . --write",
+		"lint": "biome check --writer --unsafe ./",
 		"postinstall": "cp hooks/* .git/hooks/"
 	},
 	"dependencies": {
-		"@biomejs/biome": "^1",
+		"@biomejs/biome": "v2.3.8",
 		"typescript": "^5",
 		"@tsconfig/bun": "latest",
 		"@types/bun": "latest"
 	},
-	"workspaces": ["packages/*"],
-	"trustedDependencies": ["@biomejs/biome"]
+	"workspaces": [
+		"packages/*"
+	],
+	"trustedDependencies": [
+		"@biomejs/biome"
+	]
 }
