@@ -2,7 +2,7 @@ import { describe, expect, it } from "bun:test"
 import { getInput } from "./utils"
 
 const CURRENT_DAY = new Date().getDate()
-const TEST_DAYS: number[] = []
+const TEST_DAYS: number[] = [CURRENT_DAY]
 
 describe("days", async () => {
 	for (const DAY of TEST_DAYS) {
@@ -11,7 +11,7 @@ describe("days", async () => {
 		describe(`day ${DAY}`, () => {
 			describe("pt1", () => {
 				it("example", () => {
-					expect(day.getResult1(day.exampleInput1)).toBe(day.result1)
+					expect(day.getResult1(day.exampleInput1)).toBe(day.exampleResult1)
 				})
 
 				it("input", () => {
@@ -21,7 +21,7 @@ describe("days", async () => {
 
 			describe("pt2", () => {
 				it("example", () => {
-					expect(day.getResult2(day.exampleInput2)).toBe(day.result2)
+					expect(day.getResult2(day.exampleInput2)).toBe(day.exampleResult2)
 				})
 
 				it("input", () => {
