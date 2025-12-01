@@ -3,7 +3,7 @@
 	"private": true,
 	"scripts": {
 		"fmt": "biome format . --write",
-		"lint": "biome check --writer --unsafe ./",
+		"lint": "biome check --write --unsafe ./",
 		"postinstall": "cp hooks/* .git/hooks/"
 	},
 	"dependencies": {

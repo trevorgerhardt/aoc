@@ -12,7 +12,7 @@ export function range(len: number) {
 	return [...Array(len).keys()]
 }
 
-function hasIterator(value: unknown): boolean {
+export function hasIterator(value: unknown): boolean {
 	return typeof value === "object" && value != null && Symbol.iterator in value
 }
 
