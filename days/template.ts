@@ -2,7 +2,7 @@ import { describe, expect, it } from "bun:test";
 import { getInput } from "../utils";
 import type { Part } from "../types";
 
-const DAY = 5;
+const DAY = "DAY";
 
 export const P1: Part = {
   exampleInput: ``,
