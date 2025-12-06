@@ -42,7 +42,8 @@ export const calcLcm = (...nums: number[]): number =>
   nums.reduce((a, b) => (a * b) / calcGcf(a, b));
 
 export function transpose<T>(matrix: T[][]) {
-  return matrix[0].map((_, c) => matrix.map((_, r) => matrix[r][c]));
+  const longestRow = matrix.reduce((a, c) => (a.length > c.length ? a : c));
+  return longestRow.map((_, c) => matrix.map((_, r) => matrix[r][c]));
 }
 
 export function matrixToString<T>(m: T[][]) {
@@ -123,7 +124,7 @@ export async function getInput(day: number | string, year = CURRENT_YEAR) {
     const res = await fetch(`${baseUrl}/${year}/day/${day}/input`, { headers });
     if (!res.ok) throw new Error(`Failed to fetch input: ${res.statusText}`);
     const text = await res.text();
-    await Bun.write(file, text.trim());
+    await Bun.write(file, text);
   }
   return Bun.file(filePath).text();
 }
